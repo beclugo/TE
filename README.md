@@ -10,4 +10,4 @@
 - Tensorflow
 
 ## How to execute
-1. 
+1. run `DataCreation.ipynb`
