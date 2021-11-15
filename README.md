@@ -2,6 +2,7 @@
  Source code solution to PClamp Rivet piece identification problem
 
 ## Requisites
+- imutils
 - Matplotlib
 - Numpy
 - OpenCV
