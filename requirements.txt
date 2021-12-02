@@ -1,0 +1,4 @@
+Augmentor
+numpy
+opencv-python
+tensorflow
