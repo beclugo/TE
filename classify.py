@@ -1,5 +1,5 @@
 # import the necessary packages
-from tensorflow.keras.preprocessing.image import img_to_array
+#from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 import numpy as np
 import argparse
@@ -12,9 +12,9 @@ ap.add_argument("-m", "--model", required=True,
 	help="path to trained model model")
 args = vars(ap.parse_args())
 
-DATADIR = "Project_Images/"
-CATEGORIES = ["ng", "ok","shuffle"]
-IMG_SIZE = 100
+DATADIR = "resize_imgs" #"Project_Images/"
+CATEGORIES = ["ng", "ok"]
+IMG_SIZE = 299
 
 print("[INFO] loading network...")
 model = load_model(args["model"])
