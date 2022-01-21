@@ -2,3 +2,4 @@ Augmentor
 numpy
 opencv-python
 tensorflow
+PySimpleGUI
