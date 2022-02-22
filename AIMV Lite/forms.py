@@ -11,3 +11,7 @@ class LoginForm(FlaskForm):
     password = PasswordField('Contraseña', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
     submit = SubmitField('Entrar')
+
+class ActualizarDatos(FlaskForm):
+    name = StringField('Nombre:', validators=[Length(max=64)])
+    submit = SubmitField('Actualizar')

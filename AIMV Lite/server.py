@@ -7,7 +7,7 @@ import os
 import flask
 from flask import Flask, Response, flash, request, url_for,redirect, jsonify, send_from_directory, render_template
 from flask_sqlalchemy import SQLAlchemy
-from forms import SignupForm, LoginForm
+from forms import SignupForm, LoginForm, ActualizarDatos
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import uuid
