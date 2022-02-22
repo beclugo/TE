@@ -26,16 +26,20 @@ for category in CATEGORIES:
 	class_num = CATEGORIES.index(category)
 	for img in os.listdir(path):
 		try:
-			print("Real",category)
+			print("[CATEGORIA] {}".format(category))
 			image = cv2.imread(os.path.join(path,img), cv2.IMREAD_GRAYSCALE)
 			image = cv2.resize(image, (IMG_SIZE, IMG_SIZE))
 			image = np.array(image).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 			image = image / 255
-			print("[INFO] classifying image...")
+			accuracy = 0
 			proba = model.predict(image)[0]
 			label = np.where(proba > .5, 1,0)
-			correct = "Good" if label == 1 else "Not Good"
-			print("[INFO] {}".format(correct))
-			print(img,"\n")
+			classification = "OK!" if label == 1 else "DEFECTO"
+			if label == 1:
+    				accuracy = proba * 100
+			else:
+    				accuracy = (1-proba) * 100
+			print("[INFO] {} [PRECISION] {}".format(classification,accuracy))
+			print("[IMAGEN ANALIZADA] {}".format(img), "\n")
 		except Exception as e:
 			pass
