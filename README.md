@@ -7,8 +7,12 @@
 - Librerías ubicadas en `requirements.txt`
 - 
 ## Instalación
-1. Correr el siguiente comando para realizar la instalación de las dependencias:
+1. Ejecutar el siguiente comando para realizar la instalación de las dependencias:
    ```
    pip install -r .\requirements.txt
    ```
-2. Ingresar a `http://127.0.0.1:5000/`
+2. Ejecutar el siguiente comando dentro del folder `AIMV Lite`
+   ```
+   python server.py
+   ```
+3. Ingresar a `http://127.0.0.1:5000/`
