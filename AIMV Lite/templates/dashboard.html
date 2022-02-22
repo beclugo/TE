@@ -1,47 +1,43 @@
 {% extends 'base_template.html' %}
 {% block main %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="vendor/jquery/jquery.js"></script>
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Inicio</h1>
-    <p class="mb-4"></p>
     <!-- Content Row -->
     <div class="row">
-
-        <div class="col-lg-6">
-
-            <!-- Default Card Example -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    Clasificación
-                </div>
-                <div class="card-body">
-                    <div class="preview" >
-                        <img src="/v1/streaming" id="img-classify" width="200" height="200">
-                        <br>
-                        Clasificación: <kbd id="classify"></kbd>
-                        <br>
-                        Exactitud: <kbd id="exactitud"></kbd>
-                        <br>
-                    </div>
+        <div class="preview" >
+            <div class="streaming">
+                <img src="/v1/streaming" id="img-classify">
+                <div class="streaming-overlay">
                     <br>
-                    <form id="upload-file" method="post" enctype="multipart/form-data">
-                        <fieldset>
-                            <button id="upload-file-btn" type="button">Clasificar</button>
-                        </fieldset>
-                    </form>
-                
-                </div>
+                    Clasificación: <kbd id="classify"></kbd>
+                    <br>
+                    Exactitud: <kbd id="exactitud"></kbd>
+                    <br>
+                    <fieldset>
+                        <button id="upload-file-btn" type="button">Clasificar</button>
+                    </fieldset>
+                <div>
             </div>
-
-
         </div>
-
-
     </div>
-
 </div>
+<style>
+    .streaming{
+        position: relative;
+        display: inline-block;
+    }
+    .streaming img{
+        display: block;
+    }
+    .streaming-overlay{
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        transform: translate( -5%, -5% );
+    }
+</style>
 
 <script>
     $(function() {
