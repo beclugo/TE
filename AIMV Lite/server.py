@@ -7,10 +7,8 @@ import os
 import flask
 from flask import Flask, Response, flash, request, url_for,redirect, jsonify, send_from_directory, render_template
 from flask_sqlalchemy import SQLAlchemy
-from forms import SignupForm, LoginForm, ActualizarDatos, addLoc, editLoc, addSensor, editSensor
+from forms import SignupForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug.utils import secure_filename
-from werkzeug.datastructures import  FileStorage
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import uuid
 from functools import wraps
