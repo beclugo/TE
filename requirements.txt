@@ -1,0 +1,10 @@
+Augmentor
+numpy
+opencv-python
+tensorflow
+Flask-SQLAlchemy
+Flask-Login
+Werkzeug
+Flask-WTF
+WTForms
+email-validator
