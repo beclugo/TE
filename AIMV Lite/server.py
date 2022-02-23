@@ -33,6 +33,11 @@ login_manager.login_view = 'login'
 #Config Stream
 defaultCam = cv2.VideoCapture(0)
 
+#Loading Model
+print("[INFO] loading network...")
+model = load_model('te_cnn_model_v2')
+
+
 
 class usuarios(UserMixin, db.Model):
     ID = db.Column(db.Integer, primary_key=True)
@@ -77,9 +82,6 @@ def allowed_file(filename):
 
 def classify_img(img):
     IMG_SIZE = 100
-
-    print("[INFO] loading network...")
-    model = load_model('te_cnn_model_v2')
 
     image = cv2.imread(os.path.join(UPLOAD_FOLDER,img), cv2.IMREAD_GRAYSCALE)
     image = cv2.resize(image, (IMG_SIZE, IMG_SIZE))
